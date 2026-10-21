@@ -1,0 +1,28 @@
+server:
+  port: 8081
+  error:
+    include-message: always
+Spring:
+  application:
+    name: herramientas
+  flyway:
+    enabled: true
+    baselineVersion: 1
+    locations:
+      classpath: db/migration
+    sqlMigrationSuffixes: .sql
+    baselineOnMigrate: true
+    sqlMigrationPrefix: V
+    schemas: public
+  datasource:
+    url: jdbc:postgresql://localhost:5432/intell
+    username: postgres
+    password: Mateopropro
+    driverClassName: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: validate
+  show-sql: true
+  properties:
+    hibernate:
+      format_sql: true
